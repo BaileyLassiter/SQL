@@ -1,0 +1,31 @@
+--Created a database showcasing popular shoes in a store
+
+CREATE TABLE shoes (id INTEGER PRIMARY KEY, name TEXT, color TEXT, size INTEGER, style TEXT, price INTEGER);
+
+INSERT INTO shoes VALUES (1, "NIKE", "BLUE", 10, "BASKETBALL", 70);
+INSERT INTO shoes VALUES (2, "NIKE", "RED", 12, "BASKETBALL" , 75);
+INSERT INTO shoes VALUES (3, "NIKE", "WHITE", 12, "BASKETBALL", 80);
+INSERT INTO shoes VALUES (4, "UA", "WHITE", 10, "CASUAL", 50);
+INSERT INTO shoes VALUES (5, "UA", "BLACK", 11, "RUNNING", 65);
+INSERT INTO shoes VALUES (6, "UA", "PURPLE", 9, "CASUAL", 50);
+INSERT INTO shoes VALUES (7, "UA", "RED", 11, "RUNNING", 90);
+INSERT INTO shoes VALUES (8, "ADIDAS", "GREEN", 12, "CASUAL", 45);
+INSERT INTO shoes VALUES (9, "ADIDAS", "WHITE", 12, "RUNNING", 80);
+INSERT INTO shoes VALUES (10, "VANS", "TAN", 9, "DRESS", 45);
+INSERT INTO shoes VALUES (11, "VANS", "BLACK", 12, "DRESS", 90);
+INSERT INTO shoes VALUES (12, "VANS", "BLACK", 10, "CASUAL", 40);
+INSERT INTO shoes VALUES (13, "CROCS", "WHITE", 8, "CASUAL", 45);
+INSERT INTO shoes VALUES (14, "CROCS", "BLACK", 9, "CASUAL", 50);
+INSERT INTO shoes VALUES (15, "CROCS", "TIEDYE", 8, "CASUAL", 40);
+
+
+--display the database where items larger than size 9 are ordered by price. 
+SELECT * FROM shoes WHERE size > 9 ORDER BY price;
+
+--what is the avg price of items in the crocs section? 
+SELECT AVG(price) "avg croc price"
+FROM shoes
+where name ='name'; 
+
+--what are the 5 highest prices in the store?
+SELECT price FROM shoes ORDER BY price desc limit 5;
